@@ -11,6 +11,7 @@
 		color: #FFD3B0;
 		 max-width: 500px;
   		margin: auto;
+		
 		margin-top: 200px;
 	}
 	button 
@@ -19,18 +20,27 @@
         background-color: #8c4be7;
         color: #ffffff;
         text-align: center;
- 		padding: 10px 10px;
-		border-radius: 12px;
+ 		padding: 20px;
+		border-radius: 100px 100px;
 		text-align: center;
 		display: inline-block;
 		cursor: pointer;
 	}
+	h1 {
+		color:bisque;
+		/* % are use to increase and decrease the text */
+		font: size 50px;
+		/* make underline of h1 text */
+
+	}
 	
 	input
 	{
-		border: 1px solid black;
-		padding: 10px;
-		width: 200px;
+		border: 3px solid black;
+		padding: 30px;
+		width: 300px;
+		height: 50px;
+		border-radius: 100px 100px;
 	}
 </style>
 </head>
@@ -53,7 +63,7 @@
 
 
 <body> <!-- body of page to get input form user -->
-	<h1 class="h1Class">Hash_Conveter</h1> 
+	<h1 class="h1Class"><u><b>hashtage Generator</b></u></h1> 
 	<!-- when button click the myFunction() is call -->
 	<input id="input" class="inputtag"></input><br><br>
 	<button class="button" onclick="myFunction()">submit</button>
