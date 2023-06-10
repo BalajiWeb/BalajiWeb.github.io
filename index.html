@@ -1,72 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hash_Conveter1</title>
+  <title>Hash_Conveter1</title>
 
-<style type="text/css">
-	body 
-	{
-		background-color:lightcoral;
-		text-align: center;
-		color: #FFD3B0;
-		 max-width: 500px;
-  		margin: auto;
-		
-		margin-top: 200px;
-	}
-	button 
-	{
-		display: inline-block;
-        background-color: #8c4be7;
-        color: #ffffff;
-        text-align: center;
- 		padding: 20px;
-		border-radius: 100px 100px;
-		text-align: center;
-		display: inline-block;
-		cursor: pointer;
-	}
-	h1 {
-		color:bisque;
-		/* % are use to increase and decrease the text */
-		font: size 50px;
-		/* make underline of h1 text */
+  <style type="text/css">
+    body {
+      background-color: lightcoral;
+      text-align: center;
+      color: #FFD3B0;
+      max-width: 500px;
+      margin: auto;
+      margin-top: 200px;
+    }
 
-	}
-	
-	input
-	{
-		border: 3px solid black;
-		padding: 30px;
-		width: 300px;
-		height: 50px;
-		border-radius: 10px ;
-	}
-</style>
+    button {
+      display: inline-block;
+      background-color: #8c4be7;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      border-radius: 100px 100px;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    h1 {
+      color: bisque;
+      font-size: 50px;
+      /* make underline of h1 text */
+      text-decoration: underline;
+    }
+
+    input {
+      border: 3px solid black;
+      padding: 30px;
+      width: 300px;
+      height: 50px;
+      border-radius: 100px 100px;
+    }
+  </style>
 </head>
 <script type="text/javascript">
-	function myFunction()
-	{
-		// check if the id is matches 
-		let input = document.getElementById('input');
-		let output = document.getElementById('output');
+  function copyToClipper(input) {
+  // Create a new clipboard object.
+  var clipper = new ClipboardJS();
 
-		// make include hashtag in string
-		const text = input.value;
-    	const words = text.split(" ");
-    	//const hashes = words.map(word => `#${word}`);
-		const hashes = words.map(word => '#' + word);
-    
-    	output.innerHTML = hashes.join(" ");
-	}
+  // Set the text to be copied.
+  clipper.setText(input);
+
+  // Trigger the copy event.
+  clipper.on("success", function() {
+    // Success!
+  });
+
+  // Trigger the error event.
+  clipper.on("error", function() {
+    // Error!
+  });
+}
+  function myFunction() {
+    // check if the id is matches
+    let input = document.getElementById('input');
+    let output = document.getElementById('output');
+
+    // make include hashtag in string
+    const text = input.value;
+    const words = text.split(" ");
+    const hashes = words.map(word => '#' + word);
+
+   var opt =  output.innerHTML = hashes.join(" ");
+  }
+
+  function copyToClipboard(text) {
+  if (typeof navigator.clipboard == "undefined") {
+  // If the navigator.clipboard object is not defined,
+  // then use the ClipboardJS library to copy the text to the clipboard.
+  ClipboardJS.setClipboardText(text);
+  } else {
+  // If the navigator.clipboard object is defined,
+  // then use it to copy the text to the clipboard.
+  navigator.clipboard.writeText(text).then(function() {
+    alert("The text has been copied to your clipboard.");
+  }, function(error) {
+    alert("An error occurred while copying the text to your clipboard: " + error.message);
+  });
+  }
+}
 </script>
 
+<body>
+  <!-- body of page to get input form user -->
+  <h1 class="h1Class">Hashtag Generator</h1>
+  <!-- when button click the myFunction() is call -->
+  <input id="input" class="inputtag"></input><br><br>
+  <button class="button" onclick="myFunction()">Submit</button>
+  <h1 id="output"></h1>
+  <button onclick="copyToClipboard()">Copy to clipboard</button>
 
-<body> <!-- body of page to get input form user -->
-	<h1 class="h1Class"><u><b>hashtage Generator</b></u></h1> 
-	<!-- when button click the myFunction() is call -->
-	<input id="input" class="inputtag"></input><br><br>
-	<button class="button" onclick="myFunction()">submit</button>
-	<h1 id="output"></h1>
 </body>
 </html>
