@@ -6,12 +6,21 @@
     body {
       display: grid;
       background-image: url("universe.jpeg");
+      background-repeat: no-repeat;
       background-size: cover;
       text-align: center;
       /*color: #FFD3B0; */
       max-width: 500px;
       margin: auto;
       margin-top: 200px;
+    }
+    @media only screen and (max-width:600px) {
+        .main 
+        {
+            width: 360px;
+            height: 800px;
+        }
+        
     }
 
     button {
@@ -30,7 +39,7 @@
       color: bisque;
       font-size: 50px;
       /* make underline of h1 text */
-      text-decoration: underline;
+      text-shadow: 4px 4px 4px slateblue;
     }
 
     input {
@@ -90,7 +99,7 @@ function myFunction() {
   
 </script>
 
-<body>
+<body class="main">
   <p id="p1">
     <h1 style="text-shadow: 4px 4px 8px lightblue; text-align: justify;">#Hashtag Generator</h1>
 
