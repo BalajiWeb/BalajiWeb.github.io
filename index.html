@@ -8,7 +8,7 @@
       background-image: url("universe.jpeg");
       background-size: cover;
       text-align: center;
-      color: #FFD3B0;
+      /*color: #FFD3B0; */
       max-width: 500px;
       margin: auto;
       margin-top: 200px;
@@ -36,9 +36,9 @@
     input {
       border: 3px solid black;
       padding: 30px;
-      width: 300px;
+      width: 500px;
       height: 60px;
-      border-radius: 100px 100px;
+      border-radius: 100px 100px  100px;
     }
   </style>
 </head>
@@ -92,12 +92,14 @@ function myFunction() {
 
 <body>
   <p id="p1">
-    <h1 style="text-shadow: 4px 4px 6px lightblue;">>Hashtag Generator</h1>
+    <h1 style="text-shadow: 4px 4px 8px lightblue; text-align: justify;">#Hashtag Generator</h1>
+
     <!-- when button click the myFunction() is call -->
-    <input id="inputID" id="text" class="inputtag" value="TechBrain.com"></input><br><br>
+    <input id="inputID" id="text" class="inputtag" placeholder="TechBrain.com"></input><br><br>
     <button class="button" onclick="myFunction('inputID')">Submit</button>
     <h1 id="outputID"></h1>
     <button  id="button" onclick="buttonC()">Copy</button>
   </p>
+
 </body>
 </html>
