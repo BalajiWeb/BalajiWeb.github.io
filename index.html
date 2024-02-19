@@ -11,11 +11,11 @@
       background-attachment: fixed;
       text-align: center;
       /*color: #FFD3B0; */
-      max-width: 200px;
+      max-width: 500px;
       margin: auto;
       margin-top: 200px;
     }
-    @media only screen and (max-width:600px) {
+    @media only screen and (min-width:600px) {
         .main 
         {
             width: 860px;
@@ -41,14 +41,18 @@
       font-size: 50px;
       /* make underline of h1 text */
       text-shadow: 4px 4px 4px slateblue;
+    
     }
 
     input {
       border: 3px solid black;
       padding: 30px;
       width: 500px;
-      height: 600px;
+      height: 80px;
       border-radius: 100px 100px  100px;
+    }
+    * {
+      font-family: 'Courier New', Courier, monospace;
     }
   </style>
 </head>
@@ -101,6 +105,7 @@ function myFunction() {
 </script>
 
 <body class="main">
+  
   <p id="p1">
     <h1 style="text-shadow: 4px 4px 8px lightblue; text-align: justify;">#Hashtag Generator</h1>
 
